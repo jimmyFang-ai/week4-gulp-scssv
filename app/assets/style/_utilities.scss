@@ -123,6 +123,10 @@
             }
 
     //mb 
+        &b-2 {
+            margin-bottom: $space-2;
+        }
+
         &b-4 {
             margin-bottom: $space-4;  //16
         }
@@ -188,13 +192,22 @@
 
 
         //mr 
+        &r-3 {
+            margin-right: $space*0.75;
+        }
+
         &r-5 {
             margin-right: $space-5;
+        }
+
+        &r-6 {
+            margin-right: $space-6;
         }
 
         &r-12 {
              margin-right: $space*3;
         }
+
 
         @include mobile {
           &r-sm-2 {
