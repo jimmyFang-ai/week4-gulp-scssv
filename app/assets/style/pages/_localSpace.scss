@@ -13,15 +13,16 @@
     }
    
     .store-body {
-        width: 40%;
+        width: 40%; 
     }
 
+    .store-img {
+        height: 224px;
+        overflow: hidden;
+     }
     
     .store-map {
-        width: 635px;
-        height: 422px;
-        background: url(https://i.imgur.com/xxOVc5R.png) no-repeat;
-        background-size: cover;
+        width: 58%;
     }
 
     .store-list {
@@ -41,4 +42,68 @@
         color: #212529;
         display: inline-block;
     }
+
+    @include pad {
+        padding: 44px 24px 80px;
+        .select-menu {
+            width: 237px;
+            padding: 12px 0 12px 16px;
+            font-size: 14px;
+        }  
+
+        .store-container {
+            flex-wrap: wrap;
+        }
+
+        .store-body {
+             width: 100%;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             flex-wrap: wrap;
+        }
+
+        .store-img , .store-list {
+             width: 48%;
+        }
+
+        .store-img {
+            height: 100%;
+        }
+
+        .store-map {
+            width: 100%;
+        }
+
+        .store-icon {
+            width: 15px;
+        }
+
+    }
+
+    @include mobile {
+        padding: 13px 0 41px;
+        .localSpace-title {
+            padding-left: 8px;
+            border-left: 8px solid #9F1213;
+        }
+
+        .select-menu {
+            width: 80%;
+            padding: 12px 0 12px 16px;
+            font-size: 14px;
+        }  
+
+        .store-img , .store-list {
+            width: 100%;
+            height: 50%;
+       }
+       
+       .store-title {
+        padding: 8px 0 8px 24px;
+        border-bottom: 1px solid #00000020;
+        }
+  
+    }
+     
 }
