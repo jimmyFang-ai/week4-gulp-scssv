@@ -183,6 +183,9 @@ a {
 .mt-1 {
   margin-top: 4px; }
 
+.mb-2 {
+  margin-bottom: 8px; }
+
 .mb-4 {
   margin-bottom: 16px; }
 
@@ -219,8 +222,14 @@ a {
   .mb-sm-16 {
     margin-bottom: 64px; } }
 
+.mr-3 {
+  margin-right: 12px; }
+
 .mr-5 {
   margin-right: 20px; }
+
+.mr-6 {
+  margin-right: 24px; }
 
 .mr-12 {
   margin-right: 48px; }
@@ -437,5 +446,33 @@ a {
         padding-left: 4px; }
       .faq-content .faq-text {
         margin: 0 auto; } }
+
+.localSpace {
+  padding: 81px 0 145px; }
+  .localSpace .localSpace-title {
+    font-weight: bold;
+    padding-left: 16px;
+    border-left: 8px solid #9F1213; }
+  .localSpace .select-menu {
+    width: 324px;
+    padding: 8px 0 8px 19px;
+    font-size: 18px; }
+  .localSpace .store-body {
+    width: 40%; }
+  .localSpace .store-map {
+    width: 635px;
+    height: 422px;
+    background: url(https://i.imgur.com/xxOVc5R.png) no-repeat;
+    background-size: cover; }
+  .localSpace .store-list {
+    border: 1px solid #00000020; }
+  .localSpace .store-title {
+    padding: 12px 0 12px 24px;
+    border-bottom: 1px solid #00000020; }
+  .localSpace .store-content {
+    padding: 16px 0 8px 24px; }
+  .localSpace .store-info {
+    color: #212529;
+    display: inline-block; }
 
 /*# sourceMappingURL=all.css.map */
