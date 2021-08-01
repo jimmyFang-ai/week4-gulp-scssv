@@ -1,0 +1,46 @@
+---
+title: 門市據點內頁
+layout: ./app/layout.ejs
+engine: ejs
+current: index
+---
+<div class="localSpace">
+    <div class="container">
+        <h2 class="localSpace-title">門市據點</h2>
+        <div class="space-selcet">
+           <label for="localSpace">選擇分店</label>
+           <selcet name="localSpace" id="localSpace">
+               <option value="台北中山旗艦店">台北中山旗艦店</option>
+               <option value="台中旗艦店">台中旗艦店</option>
+               <option value="高雄旗艦店">高雄旗艦店</option>
+            </selcet>
+        </div>
+         <ul class="card-space">
+             <li class="card-body">
+                 <div class="card-img">
+                      <img src="https://i.imgur.com/XFE7Awx.jpg" alt="taipeiStore">
+                 </div>
+                 <div class="card-list">
+                     <h3 class="card-title"></h3>
+                     <div class="card-content">
+                         <li>
+                             <img src="" alt="phone">
+                             <a class="card-link" href="tel:(02)000-1234">電話：(02)000-1234</a>
+                         </li>
+                         <li>
+                             <img src="" alt="clock">
+                             <a class="card-link" href="#">營業時間：10:00-21:00</a>
+                         </li>
+                         <li>
+                            <img src="" alt="map">
+                            <a class="card-link" href="#">地址：台北市中山區南京東路25巷2-1號</a>
+                        </li>
+                     </div>
+                 </div>
+             </li>
+             <li class="card-body">
+                     <img src="https://i.imgur.com/xxOVc5R.png" alt="taipeiStoreMap">
+             </li>
+         </ul>
+    </div>
+</div>
