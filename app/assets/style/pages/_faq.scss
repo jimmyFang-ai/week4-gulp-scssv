@@ -1,0 +1,37 @@
+.faq-content {
+    font-family: 'Noto Sans TC';
+    font-weight: bold;
+    padding: 80px 0 112px;
+    .faq-title2 {
+        border-left: 8px solid #9F1213;
+        padding-left: $space;
+    }
+    
+    .faq-list-title {
+        line-height: 1.15;
+    }
+
+    .faq-text {
+        margin-left: 86px;
+        font-weight: normal;
+    }
+
+    @include pad {
+        padding:  45px 24px 50px;
+        .faq-text {
+            margin-left: 53px;
+        }
+    }
+
+    @include mobile {
+        padding: 13px 0 36px;
+        .faq-title2 {
+            padding-left: $space-1;
+        }
+
+        .faq-text {
+            margin: 0 auto;
+        }
+    }
+}
+

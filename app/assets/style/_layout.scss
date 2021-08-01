@@ -1,0 +1,171 @@
+.header {
+    padding: 30px  88px;
+    .navbar-container {
+        max-width: 1744px;
+    } 
+  
+    .logo {
+        width: 80px;
+        height: 48px;
+        background: url(https://i.imgur.com/M0TDEN8.png) no-repeat;
+        background-size: cover;
+        @include hide-text;
+    }
+  
+    .navbar-menu {
+        text-align: center;
+        width: 492px;
+        font-size: $text-lg ; //20
+      }
+    
+    .navbar-link {
+        padding: 8px;
+        text-decoration: none;
+        color: $white;
+        &:hover {
+           background: $white;
+           color: $primary;
+        }
+      }
+  
+      @include pad {
+         .navbar-menu {
+             width: 420px;
+         }
+      }
+  
+      @include mobile {
+         padding: 0;
+        .navbar-container {
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+  
+        .logo {
+            width: 48px;
+            height: 30px;
+            margin: 10px 0;
+        }
+    
+       .navbar-menu {
+           flex-wrap: wrap;
+           width: 100%;
+       }
+  
+        .navbar-item {
+            border: 1px solid $white;
+            width: 50%;
+        }
+      }
+  }
+  
+  
+  
+  // footer 
+  .footer {
+    .footer-navbar {
+        flex-wrap: wrap;
+    }
+  
+    .navbar-menu {
+        width: 42%;
+    }
+  
+    .navbar-link {
+        padding: 10px;
+        color: $white;
+        &:hover {
+            background: $white;
+            color: $primary;
+        }
+    }
+  
+    .socialMedia {
+        width: 19%;   
+        .socialMedia-icon {
+            transition: 0.5s;
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+  
+  
+    .contact-link {
+        display: inline-block;
+        color: $white;
+        font-size: $text-4xl;
+        transition: 0.5s;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+  
+    @include pad {
+        .navbar-menu {
+            width: 60%;
+        }
+  
+        .socialMedia {
+            width: 20%;
+        }
+  
+        .socialMedia-item {
+            width: 18%;
+        }
+  
+        .contact-icon {
+           width: 7%;
+        }
+        
+        .contact-link {
+            font-size: $text-lg;
+        }
+    }
+  
+    @include mobile {
+      .container {
+        padding-left: 0;
+        padding-right: 0;
+      }
+  
+        .navbar-menu {
+            display: none;
+        }
+  
+        .footer-navbar {
+           flex-direction: row-reverse;
+           align-items: start;
+       }
+    
+       .socialMedia {
+          width: 35%;
+      }
+  
+      .socialMedia-item {
+          width: 23%;
+      }
+  
+      .contact-info {
+          width: 48%;
+      }
+  
+       .contact-icon {
+           width: 10%;
+       }
+  
+       .contact-link {
+           font-size: $font-size-base;
+       }
+  
+       .legal-container {
+           flex-direction: column;
+       }
+  
+       .privacy {
+           display: block;
+       }
+  
+    }
+  }
+  

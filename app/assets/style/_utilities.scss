@@ -1,0 +1,288 @@
+// Font Size (大小)
+.text {
+    &-sm{
+        font-size: $text-sm;
+    }
+    &-base{
+        font-size: $text-base;
+    }
+    &-lg{
+        font-size: $text-lg;
+    }
+    &-xl{
+        font-size: $text-xl;
+    }
+    &-2xl{
+        font-size: $text-2xl;
+    }
+    &-3xl{
+        font-size:$text-3xl;
+    }
+    &-4xl{
+        font-size:$text-4xl;
+    }
+    &-5xl{
+        font-size:$text-5xl;
+    }
+    &-6xl{
+        font-size:$text-6xl;
+    }
+    &-7xl{
+        font-size:$text-7xl;
+    }
+
+    @include mobile {
+       &-sm-sm {
+           font-size: $text-sm;
+       }
+
+       &-sm-base {
+           font-size: $text-base;
+       }
+
+        &-sm-2xl{
+            font-size: $text-2xl;
+        }
+    }
+
+}
+
+//text color  (顏色)
+.text {
+    &-white {
+        color: $white;
+    }
+
+    &-dark {
+        color: $dark;
+    }
+
+    &-primary {
+        color: $primary;
+    }
+}
+
+
+// Bg color
+.bg {
+    &-primary {
+        background: $primary;
+    }
+}
+
+
+//Flex 
+.d-flex{
+    display: flex;
+}
+.flex{
+    &-row{
+        flex-direction: row;
+    }
+    &-row-reverse{
+        flex-direction: row-reverse;
+    }
+    &-column{
+        flex-direction: column;
+    }
+    &-column-reverse{
+        flex-direction: column-reverse;
+    }
+}
+
+.justify {
+    &-end{
+        justify-content: flex-end;
+    }
+    &-center{
+        justify-content: center;
+    }
+    &-between{
+        justify-content: space-between;
+    }
+    &-around{
+        justify-content: space-around;
+    }
+}
+.align {
+    &-items-center{
+        align-items: center;
+    }
+}
+
+// spaceing  (間距)
+
+// margin
+.m {
+    //mt
+        &t-0 {
+              margin-top: 0;
+            }
+         &t-1 {
+              margin-top: $space-1;  //4
+            }
+
+    //mb 
+        &b-4 {
+            margin-bottom: $space-4;  //16
+        }
+
+        &b-8 {
+             margin-bottom: $space-9;  //32
+        }
+
+        &b-9 {
+              margin-bottom: $space-10;  //36
+         }
+
+
+        &b-15{
+              margin-bottom: $space-12;   //60
+          }  
+        
+           @include pad {
+                &b-md-3 {
+                margin-bottom: $space*0.75;
+               }
+
+                &b-md-6 {
+                    margin-bottom: $space-6;
+                }
+
+               &b-md-10 {
+                margin-bottom: $space-11;
+               }
+
+               &b-md-6 {
+                 margin-bottom: $space-6;
+               }
+        }
+
+        @include mobile {
+            &b-sm-1 {
+                margin-bottom:  $space-2;
+            }
+
+            &b-sm-2 {
+                margin-bottom: $space-2;
+            }
+
+            &b-sm-4 {
+                margin-bottom: $space;
+            }
+
+            &b-sm-5 {
+                margin-bottom: $space-5;
+            }
+
+            &b-sm-6 {
+                margin-bottom: $space-6;
+            }
+
+            &b-sm-16 {
+                margin-bottom: $space-13 ;
+            }
+        }
+
+
+
+
+        //mr 
+        &r-5 {
+            margin-right: $space-5;
+        }
+
+        &r-12 {
+             margin-right: $space*3;
+        }
+
+        @include mobile {
+          &r-sm-2 {
+              margin-right: $space-2;
+          }
+        }
+ }
+
+
+// padding
+.p{
+    //pt
+         &t-0{
+              padding-top: 0;
+           }
+         &t-1{
+              padding-top: $space-1; //4
+           }
+       
+         &t-4 {
+              padding-top: $space-9;
+         }
+
+         &t-8 {
+            padding-top: $space-9;
+         }
+
+         &t-9 {
+             padding-top: $space-10; //36
+         }  
+       @include pad {
+        &t-md-6 {
+            padding-top: $space-6;//24
+        }
+       }
+
+       @include mobile {
+           &b-sm-0 {
+              padding-top: 0;
+           }
+       }
+
+    // pb
+         &b-2 {
+             padding-bottom: $space-2;
+         } 
+
+         &b-6 {
+             padding-bottom: $space-6 ;
+         }
+
+         &b-10 {
+             padding-bottom: $space-11;
+         }
+
+        @include pad {
+            &b-md-8 {
+                padding-bottom: $space-9;;
+            }
+        }
+
+        @include mobile {
+            &b-sm-6 {
+                padding-bottom: $space-6;//24
+            }
+        }
+
+    //pl 
+           &l-2 {
+               padding-left: 16px;
+           }
+
+    //pr   
+           &r-2 {
+               padding-right: 16px;
+           }
+ }
+
+//text-align
+.text{
+    &-left{
+        text-align: left;
+    }
+    &-right{
+        text-align: right;
+    }
+    &-center{
+        text-align: center;
+    }
+}
+

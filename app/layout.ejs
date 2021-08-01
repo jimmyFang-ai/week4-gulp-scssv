@@ -10,15 +10,91 @@
 </head>
 
 <body>
-  <header class="header">
-    這是 header
+  <header class="header bg-primary">
+    <div class="navbar-container d-flex justify-between  align-items-center ">
+      <h1 class="logo">
+        <a href="#">logo</a>
+     </h1>
+     <ul class="navbar-menu d-flex justify-between">
+        <li class="navbar-item">
+          <a class="navbar-link" href="#">系列鏡框</a>
+       </li>
+       <li class="navbar-item">
+         <a class="navbar-link" href="localSpace.html">門市據點</a>
+       </li>
+        <li class="navbar-item">
+         <a class="navbar-link" href="#">部落格</a>
+       </li>
+        <li  class="navbar-item">
+         <a class="navbar-link" href="faq.html">常見問題</a>
+       </li>
+     </ul>
+    </div>
   </header>
 
   <%- contents %>
 
-  <footer class="footer">
-    footer
-  </footer>
+ 
+  <footer class="footer bg-primary text-white pt-4 pb-6 pr-2 pl-2   pb-md-8 pt-md-6 pb-sm-6">
+    <div class="container">
+       <div class="footer-navbar d-flex justify-between align-items-center mb-8 mb-md-6 mb-sm-2">
+        <ul class="navbar-menu   d-flex justify-between">
+          <li>
+            <a class="navbar-link" href="#">首頁</a>
+          </li>
+          <li>
+            <a  class="navbar-link" href="#" >系列鏡框</a>
+          </li>
+          <li>
+            <a  class="navbar-link" href="localSpace.html" >門市據點</a>
+          </li>
+          <li>
+            <a  class="navbar-link" href="#" >部落格</a>
+          </li>
+          <li>
+            <a  class="navbar-link"  href="faq.html" >常見問題</a>
+          </li>
+        </ul>
+        <ul class="socialMedia d-flex justify-between">
+          <li class="socialMedia-item">
+              <a class="socialMedia-icon" href="#">
+                <img src="assets/images/icon-fb.svg" alt="fb">
+              </a>
+          </li>
+          <li class="socialMedia-item">
+              <a class="socialMedia-icon" href="#">
+                <img src="assets/images/icon-ig.svg" alt="ig">
+              </a>
+          </li>
+          <li class="socialMedia-item">
+              <a class="socialMedia-icon" href="#">
+                <img src="assets/images/icon-line.svg" alt="line">
+              </a>
+          </li>
+        </ul>
+        <ul class="contact-info   pt-9 pb-2 pt-md-6  pb-sm-0">
+          <li class=" d-flex mb-4  mb-md-3  mb-sm-1">
+              <img class="contact-icon mr-5 mr-sm-2" src="assets/images/icon-phone.svg" alt="phone">
+              <a  class="contact-link" href="tel:+886-0800-000-000">0800-000-000</a>
+          </li>
+          <li  class="d-flex mb-4 mb-md-3 mb-sm-1">
+            <img class="contact-icon mr-5 mr-sm-2" src="assets/images/icon-mail.svg" alt="mail">
+            <a class="contact-link" href="mailto:glasses@business.com">glasses@business.com</a>
+          </li>
+         </ul>
+       </div>
+
+       <div class="legal-container d-flex justify-between">
+        <div class="copyright-text  mb-sm-2">
+             <p>Copyright © 2020 Glasses.All rights reserved.</p> 
+        </div>
+        <div class="legal-content text-sm">
+            <span class="privacy mr-12  mb-sm-2">隱私權政策</span>
+            <span>服務條款</span>
+        </div>
+       </div>
+    </div>
+</footer>
   <script src="./assets/js/vendors.js"></script>
   <script src="./assets/js/all.js"></script>
 </body>
