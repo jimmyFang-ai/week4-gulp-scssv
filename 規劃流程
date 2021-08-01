@@ -1,0 +1,321 @@
+
+拆分篇:
+ 
+html分頁拆分
+   -products.html
+   -location.html
+   -blog.html
+   -fq.html
+
+scss拆分順序
+
+  //環境設定
+
+   _varable.scss (全域使用變數顏色、變數字體大小)  
+      - 色彩:  文字- $primary: #AA0601    背景- $primary-light:#AA06010D  $$primary-dark:#650300
+      - 字體:        $font-noto: 'Noto-Sans TC',serif  ,  $font-Roboto: Roboto;
+
+   _reset.scss (清除預設樣式)
+
+   _base.scss(全域設定內容器、圖片置中、盒模型、body)
+      - 盒模型: *,*::before,*::after {  box-sizing: border-box;}
+      - 圖片置中: img {max-width: 100%;  height: 0 auto; vertical-align: middle;}
+      - body {  $font-Roboto, $font-noto,...apple, }
+
+   _mixins.scss (圖片取代文字) 
+   _utilities.scss (magin、 padding 、flex)
+   _grild.scss(@media斷點使用 pad mobile)
+        
+   //頁面
+     pages/page.scss
+
+   //元件
+     components/card.scss
+
+
+  scss分類篇:
+   
+     -components資料夾
+        card.scss  
+        pagination.scss 
+
+     -moduule資料夾
+        _form.scss
+        _button.scss
+
+     -layout資料夾
+        -footer.scss
+        -header.scss
+
+     -pages資料夾
+        _products.scss
+        _fq.scss
+        _blog.scss
+        _location.scss
+       
+ 
+ all.scss 匯入所有寫好的個別scss檔
+   順序: 工具類設定→共同樣式→分頁樣式  
+
+
+
+
+實作篇:
+
+眼鏡網站(rwd)使用gulp 拆分scss
+
+ 容器.container( _base.scss) {
+    max-width: 1100px
+    margin: 0 auto
+    padding: 0 15px (縮放寬度時，保持容器寬度，不易貼其版面，增加可讀性)
+ }
+
+
+ 字體 _varable.scss (使用Google fonts): 
+      中文: Noto-Sans TC
+      英文: Roboto
+    -font-family(順序): 'Roboto','Noto-Sans TC',serif
+ 
+
+ 大小(_varable.scss ):
+    個別設定在class
+     ex: 
+      h1 {
+        font-size: 50px
+
+      (平板)
+        @media (max-width: 768px) {
+            font-size: 50px
+        }
+       
+       (手機)
+        @media (max-width: 414x) {
+            font-size: 20px
+        }
+      }
+
+    
+   間距(_utilities.scss) 利用Boostrap概念:
+
+     html: <div class="mb-3 mb-md-2 mb-sm-1"></div>
+
+      scss:
+             mb-3 { margin-bottom: 16px}
+        pad:    mb-md-2 { margin-bottom: 8px}
+        mobile:         mb-sm-2 { margin-bottom: 8px}
+    
+  
+  斷點media(@mixin+@content)  _grild.scss:
+      _grild.scss:                                page.scss:
+         @mixin pad() {                             .header {
+           @media(max-width:768px) {                    menu li  {
+            @content                                        width: 100px;
+          }                                                 height: 100px;
+        }                                                 {
+                                                     @include pad() {
+       @mixin mobile() {                                   width: 25%;
+         @media(max-width:414px) {                        {
+           @content                                   {
+         }
+       }
+
+  layout(共同樣式):
+       - 區塊: footer.scss和 header.scss
+       - 頁面: 前台.ejs 和 後台.ejs
+
+
+ max-width & width 圖片上的應用
+
+* Codepen 範例 (https://codepen.io/AliceChiang/pen/yLeBOGa)
+    * width: 500px 是固定 500px，小於 500 的時候會出現 x 軸
+    * max-width: 500px 最大是500px，螢幕越小，雖然是使用 px 但是 max-width 可以讓圖片可以跟著縮小，小於 500px 會滿版
+    * (不建議在img用witdh) width: 50% 佔螢幕的50%，所以螢幕越小圖片越小
+    * max-width: 100% 和 width: 100% 的差別：如果 img 小於父元素，則 width: 100%會將其拉伸到其父元素的全寬。max-width: 100% 不會。
+
+
+
+
+ scss分類篇:
+
+_varable.scss:
+    字體大小:   //Font Size  
+                  $font-size-base:16px;  
+                  $text-sm : $font-size-base * 0.875; 
+                  $text-base : $font-size-base ; 
+                  $text-lg : $font-size-base * 1.25 ;
+
+
+
+    顏色:      //Color system   
+                 $black: #000000;//$dark  
+                 $white: #FFFFFF;   
+                 $primary:#AA0601   bg-navbar
+
+    間距推擠:  //space
+                  $space: 16px;
+                  $space-1 : $space * 0.25;
+                  $space-2 : $space * 0.5;
+                  $space-3 : $space * 0.625;
+                  $space-4 : $space ;
+
+_base.scss : 
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;500&display=swap');
+   body{  font-family(順序): 'Roboto','Noto-Sans TC',serif....,apple 
+          font-size: $font-size-base;
+          line-height: 1.5 }
+
+    - 盒模型: *,*::before,*::after {  box-sizing: border-box;}
+    - 圖片置中: img {max-width: 100%;  height: 0 auto; vertical-align: middle;}
+                                                                     
+
+_utilities.scss:
+        // Font Size
+         .text{
+               &-sm{
+                   font-size: $text-sm;
+                  }
+               &-base{
+                   font-size: $text-base;
+                  }
+               &-lg{
+                   font-size: $text-lg;
+                   }
+
+        //text color
+                   .text{
+                         &-primary{
+                                color: $primary;
+                                 }
+                         &-secondary{
+                                color: $secondary;
+                                }
+                         &-light{
+                                color: $light;
+                                }
+            
+        //Bg Color
+                      .bg{
+                             &-light{
+                                  background: $light;
+                                    }
+                             &-primary{
+                                   background: $primary;
+                                    }
+                             &-secondary{
+                                      background: $secondary;
+                                    }
+
+         //Flex
+                              .d-flex{
+                                 display: flex;
+                                     }
+
+        //margin
+                             .m{
+                                  //mt
+                                        &t-0{
+                                           margin-top: 0;
+                                          }
+                                        &t-1{
+                                            margin-top: $space-1;  //4
+                                          }
+
+                                  //mb 
+                                      &b-4 {
+                                          margin-bottom: $space-4;  //16
+                                      }
+                            
+                                      &b-8 {
+                                           margin-bottom: $space-9;  //32
+                                      }
+
+                                       &b-9 {
+                                            margin-bottom: $space-10;  //36
+                                       }
+
+
+                                        &b-15{
+                                            margin-bottom: $space-12;   //60
+                                        }  
+
+
+
+
+                              @include pad{
+                                          &t-md-0,&y-md-0{
+                                               margin-top: 0;
+                                           }
+                                            &t-md-1,&y-md-1{
+                                             margin-top: $space-1;
+                                           }
+
+        //padding
+                              .p{
+                                    //pt
+                                         &t-0{
+                                              padding-top: 0;
+                                           }
+                                         &t-1{
+                                               padding-top: $space-1; //4
+                                           }
+
+                                          
+ 
+                                    //pb
+                                       
+
+
+
+
+
+        //text-align
+                              .text{
+                                      &-left{
+                                             text-align: left;
+                                             }
+                                               &-right{
+                                              text-align: right;
+                                             }
+                                              &-center{
+                                                 text-align: center;
+                                             }
+                                              }
+
+
+_mixins.scss: 
+     @mixin hide-text {
+           text-indent: 101%;
+           white-space: nowrap;
+           overflow: hidden;
+     }
+
+
+_grild.scss(@media斷點使用 pad mobile):
+    $pad:992px;
+    $mobile:767px;
+
+           @mixin pad {
+                @media(max-width:$pad){
+                       @content;
+                        }
+                      }
+           @mixin mobile {
+               @media(max-width:$mobile){
+                      @content;
+                        }
+                       }
+                        
+    .container{
+                    max-width: 1110px;
+                    margin: 0 auto;
+                       @include pad{
+                          max-width: 690px;
+                                  }
+                       @include mobile{
+                           max-width: 345px;
+                                 }
+                                    }
+
+        
+
+        
